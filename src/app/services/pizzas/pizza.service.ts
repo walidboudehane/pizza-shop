@@ -7,6 +7,9 @@ import { Tag } from 'src/app/shared/models/tag';
 export class PizzaService {
 
   constructor() { }
+  getPizzaByid(id:Number):Pizza{
+    return this.getAll().find(pizza=>pizza.id==id)!;
+  }
   getAllPizzasBySearchTerm(searchTerm:string) :Pizza[]{
     return  this.getAll().filter(pizza =>
       pizza.name.toLowerCase().includes(searchTerm.toLowerCase()));
